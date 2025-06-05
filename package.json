@@ -1,0 +1,25 @@
+{
+  "name": "curriculo-api",
+  "version": "1.0.0",
+  "description": "API REST para gerenciar currículos com Express e PostgreSQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "curriculo",
+    "nodejs",
+    "postgresql"
+  ],
+  "author": "Wellington Silva",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "pg": "^8.16.0"
+  }
+}
