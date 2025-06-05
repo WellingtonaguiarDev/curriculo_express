@@ -5,6 +5,7 @@ exports.getPessoas = async (req, res) => {
     const result = await db.query('SELECT * FROM pessoas ORDER BY id');
     res.json(result.rows);
   } catch (err) {
+    console.error('Erro ao buscar pessoas:', err);
     res.status(500).json({ error: err.message });
   }
 };
@@ -17,6 +18,7 @@ exports.getPessoaById = async (req, res) => {
     }
     res.json(result.rows[0]);
   } catch (err) {
+    console.error('Erro ao buscar pessoa por ID:', err);
     res.status(500).json({ error: err.message });
   }
 };
@@ -30,6 +32,7 @@ exports.createPessoa = async (req, res) => {
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
+    console.error('Erro ao criar pessoa:', err);
     res.status(500).json({ error: err.message });
   }
 };
@@ -47,6 +50,7 @@ exports.updatePessoa = async (req, res) => {
     }
     res.json(result.rows[0]);
   } catch (err) {
+    console.error('Erro ao atualizar pessoa:', err);
     res.status(500).json({ error: err.message });
   }
 };
@@ -60,6 +64,7 @@ exports.deletePessoa = async (req, res) => {
     }
     res.json({ message: 'Pessoa excluída com sucesso.' });
   } catch (err) {
+    console.error('Erro ao deletar pessoa:', err);
     res.status(500).json({ error: err.message });
   }
 };
